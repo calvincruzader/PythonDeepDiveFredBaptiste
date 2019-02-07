@@ -43,9 +43,9 @@ myQ.put(Rectangle(5, 10))
 myQ.put(Rectangle(1,2))
 myQ.put(Rectangle(100,100))
 
-while not myQ.empty():
-  item = myQ.get() 
-  print(item.area())
+# while not myQ.empty():
+#   item = myQ.get() 
+#   print(item.area())
 
 '''
 Looks like in order to implement your own PQ, then you have to create your own objects that have a comparison operator __cmp__ that will override the default dunder __cmp__ method
@@ -57,11 +57,14 @@ defined object rather than just pass in a comparator to the PQ object....
 
 class myPQ(Q.PriorityQueue):
   def __cmp__(self, other):
-    return other - self 
+    print("hello")
+    return self - other
+
 
 myQQ = myPQ() 
 myQQ.put(1)
 myQQ.put(3)
+myQQ.put(-10)
 
 while not myQQ.empty():
   item = myQQ.get() 
